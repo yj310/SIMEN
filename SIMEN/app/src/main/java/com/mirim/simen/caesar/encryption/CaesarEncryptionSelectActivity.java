@@ -7,20 +7,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.mirim.simen.R;
 
 public class CaesarEncryptionSelectActivity extends AppCompatActivity {
+
+    LinearLayout buttonShort;
+    LinearLayout buttonLong;
+    ImageView buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caesar_encryption_select);
 
+        setButton();
+    }
 
-        Button buttonShort = (Button)findViewById(R.id.button_short);
-        Button buttonLong = (Button)findViewById(R.id.button_long);
-        ImageView buttonBack = findViewById(R.id.button_back);
+    public void setButton() {
+
+        buttonShort = findViewById(R.id.button_short);
+        buttonLong = findViewById(R.id.button_long);
+        buttonBack = findViewById(R.id.button_back);
 
 
 
@@ -36,7 +45,7 @@ public class CaesarEncryptionSelectActivity extends AppCompatActivity {
                         startActivity(intent1);
                         break;
                     case R.id.button_long:
-                        Intent intent2 = new Intent(CaesarEncryptionSelectActivity.this, CaesarEncryptionShortActivity.class);
+                        Intent intent2 = new Intent(CaesarEncryptionSelectActivity.this, CaesarEncryptionLongActivity.class);
                         startActivity(intent2);
                         break;
                     case R.id.button_back:
@@ -49,8 +58,6 @@ public class CaesarEncryptionSelectActivity extends AppCompatActivity {
         buttonShort.setOnClickListener(listener);
         buttonLong.setOnClickListener(listener);
         buttonBack.setOnClickListener(listener);
-
-
 
     }
 }

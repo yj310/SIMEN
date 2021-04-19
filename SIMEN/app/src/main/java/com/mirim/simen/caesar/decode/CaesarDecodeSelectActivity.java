@@ -7,23 +7,32 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.mirim.simen.R;
 import com.mirim.simen.caesar.CaesarSelectActivity;
+import com.mirim.simen.caesar.encryption.CaesarEncryptionSelectActivity;
+import com.mirim.simen.caesar.encryption.CaesarEncryptionShortActivity;
 
 public class CaesarDecodeSelectActivity extends AppCompatActivity {
+
+    LinearLayout buttonShort;
+    LinearLayout buttonLong;
+    ImageView buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caesar_decode_select);
 
+        setButton();
+    }
 
+    public void setButton() {
 
-
-        Button buttonShort = (Button)findViewById(R.id.button_short);
-        Button buttonLong = (Button)findViewById(R.id.button_long);
-        ImageView buttonBack = findViewById(R.id.button_back);
+        buttonShort = findViewById(R.id.button_short);
+        buttonLong = findViewById(R.id.button_long);
+        buttonBack = findViewById(R.id.button_back);
 
 
 
@@ -39,7 +48,7 @@ public class CaesarDecodeSelectActivity extends AppCompatActivity {
                         startActivity(intent1);
                         break;
                     case R.id.button_long:
-                        Intent intent2 = new Intent(CaesarDecodeSelectActivity.this, CaesarDecodeShortActivity.class);
+                        Intent intent2 = new Intent(CaesarDecodeSelectActivity.this, CaesarDecodeLongActivity.class);
                         startActivity(intent2);
                         break;
                     case R.id.button_back:

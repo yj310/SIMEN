@@ -41,25 +41,54 @@
         android:textColor="#000000"
         android:textSize="30dp"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button_short"
-            android:layout_width="110dp"
-            android:layout_height="120dp"
-            android:background="@drawable/button_layout2"
-            android:layout_marginRight="20dp"
-            android:text="단문"/>
-        <Button
-            android:id="@+id/button_long"
-            android:layout_width="110dp"
-            android:layout_height="120dp"
-            android:background="@drawable/button_layout2"
-            android:text="장문"/>
+
+
+    <LinearLayout
+        android:id="@+id/button_short"
+        android:layout_gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_layout2"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/short_text"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:text="단문"
+            android:layout_marginLeft="0dp"/>
+
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/button_long"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_layout2"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/long_text"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:text="장문"
+            android:layout_marginLeft="0dp"/>
+
+    </LinearLayout>
+
 
 </LinearLayout>
