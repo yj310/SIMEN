@@ -41,25 +41,50 @@
         android:textColor="#000000"
         android:textSize="30dp"/>
 
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/button_encryption"
         android:layout_gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_layout2"
+        android:gravity="center"
         android:orientation="horizontal">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/lock"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:text="암호화"
+            android:layout_marginLeft="0dp"/>
 
-        <Button
-            android:id="@+id/button_caesar_encryption"
-            android:layout_width="110dp"
-            android:layout_height="120dp"
-            android:background="@drawable/button_layout2"
-            android:layout_marginRight="20dp"
-            android:text="암호화"/>
-        <Button
-            android:id="@+id/button_caesar_decode"
-            android:layout_width="110dp"
-            android:layout_height="120dp"
-            android:background="@drawable/button_layout2"
-            android:text="복호화"/>
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/button_decode"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_layout2"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/lock"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:text="복호화"
+            android:layout_marginLeft="0dp"/>
 
+    </LinearLayout>
 </LinearLayout>

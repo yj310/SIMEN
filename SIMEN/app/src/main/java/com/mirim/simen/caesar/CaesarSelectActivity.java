@@ -7,24 +7,34 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.mirim.simen.R;
 import com.mirim.simen.caesar.encryption.CaesarEncryptionSelectActivity;
 import com.mirim.simen.caesar.decode.CaesarDecodeSelectActivity;
+import com.mirim.simen.playfair.PlayfairSelectActivity;
+import com.mirim.simen.playfair.decode.PlayfairDecodeSelectActivity;
+import com.mirim.simen.playfair.encryption.PlayfairEncryptionSelectActivity;
 
 public class CaesarSelectActivity extends AppCompatActivity {
+
+    LinearLayout buttonEncryption;
+    LinearLayout buttonDecode;
+    ImageView buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caesar_select);
 
+        setButton();
 
-        Button buttonEncryption = (Button)findViewById(R.id.button_caesar_encryption);
-        Button buttonDecode = (Button)findViewById(R.id.button_caesar_decode);
-        ImageView buttonBack = findViewById(R.id.button_back);
+    }
 
-
+    public void setButton(){
+        buttonEncryption = findViewById(R.id.button_encryption);
+        buttonDecode = findViewById(R.id.button_decode);
+        buttonBack = findViewById(R.id.button_back);
 
         View.OnClickListener listener = new View.OnClickListener()
         {
@@ -33,11 +43,11 @@ public class CaesarSelectActivity extends AppCompatActivity {
             {
                 switch(v.getId())
                 {
-                    case R.id.button_caesar_encryption:
+                    case R.id.button_encryption:
                         Intent intent1 = new Intent(CaesarSelectActivity.this, CaesarEncryptionSelectActivity.class);
                         startActivity(intent1);
                         break;
-                    case R.id.button_caesar_decode:
+                    case R.id.button_decode:
                         Intent intent2 = new Intent(CaesarSelectActivity.this, CaesarDecodeSelectActivity.class);
                         startActivity(intent2);
                         break;
@@ -51,9 +61,6 @@ public class CaesarSelectActivity extends AppCompatActivity {
         buttonEncryption.setOnClickListener(listener);
         buttonDecode.setOnClickListener(listener);
         buttonBack.setOnClickListener(listener);
-
-
-
 
     }
 }

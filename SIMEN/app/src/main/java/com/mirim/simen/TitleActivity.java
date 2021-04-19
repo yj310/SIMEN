@@ -13,15 +13,26 @@ import com.mirim.simen.playfair.PlayfairSelectActivity;
 import com.mirim.simen.single.SingleSelectActivity;
 
 public class TitleActivity extends AppCompatActivity {
+
+    Button buttonCaesar;
+    Button buttonSingle;
+    Button buttonPlayfair;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title);
 
+        setButton();
 
-        Button buttonCaesar = (Button)findViewById(R.id.button_caesar);
-        Button buttonSingle = (Button)findViewById(R.id.button_single);
-        Button buttonPlayfair = (Button)findViewById(R.id.button_playfair);
+
+
+    }
+
+    public void setButton() {
+        buttonCaesar = (Button)findViewById(R.id.button_caesar);
+        buttonSingle = (Button)findViewById(R.id.button_single);
+        buttonPlayfair = (Button)findViewById(R.id.button_playfair);
+
         View.OnClickListener listener = new View.OnClickListener()
         {
             @Override
@@ -48,7 +59,5 @@ public class TitleActivity extends AppCompatActivity {
         buttonCaesar.setOnClickListener(listener);
         buttonSingle.setOnClickListener(listener);
         buttonPlayfair.setOnClickListener(listener);
-
-
     }
 }
