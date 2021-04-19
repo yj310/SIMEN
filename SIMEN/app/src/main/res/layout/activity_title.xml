@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBasic"
+    android:orientation="vertical"
+    tools:context=".TitleActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="150dp"
+        android:text="SIMEN"
+        android:textColor="#ffffff"
+        android:textSize="50dp"/>
+
+    <Button
+        android:id="@+id/button_caesar"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_layout1"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textSize="16dp"
+        android:text="시저 암호"/>
+
+    <Button
+        android:id="@+id/button_single"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_layout1"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textSize="16dp"
+        android:text="단일 치환 암호"/>
+
+    <Button
+        android:id="@+id/button_playfair"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_layout1"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textSize="16dp"
+        android:text="다중 문자 치환 암호"/>
+
+</LinearLayout>
