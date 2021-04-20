@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".single.encryption.SingleEncryptionLongActivity"></activity>
+        <activity android:name=".caesar.decode.CaesarDecodeLongEncryKeyActivity"></activity>
+        <activity android:name=".caesar.decode.CaesarDecodeShortEncryKeyActivity" />
+        <activity android:name=".single.encryption.SingleEncryptionLongActivity" />
         <activity android:name=".single.encryption.SingleEncryptionShortActivity" />
         <activity android:name=".single.encryption.SingleEncryptionSelectActivity" />
         <activity android:name=".single.decode.SingleDecodeLongActivity" />

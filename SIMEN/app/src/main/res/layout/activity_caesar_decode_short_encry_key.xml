@@ -39,10 +39,19 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/button_another_key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="시저 암호화"
-                android:layout_marginTop="50dp"
+                android:text="암호키 입력으로 복호화하기"
+                android:layout_gravity="right"
+                android:layout_margin="10dp"
+                android:textColor="#d0d0d0"
+                android:textSize="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시저 복호화"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="70dp"
                 android:layout_gravity="center"
                 android:textColor="#000000"
@@ -64,13 +73,13 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginRight="20dp"
-                        android:src="@drawable/open_lock" />
+                        android:src="@drawable/lock" />
 
                     <EditText
                         android:layout_width="250dp"
                         android:layout_height="40dp"
                         android:background="@drawable/input_layout1"
-                        android:hint="평문을 입력하시오."
+                        android:hint="암호문을 입력하시오."
                         android:inputType="textShortMessage"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
@@ -642,13 +651,13 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginRight="20dp"
-                        android:src="@drawable/lock" />
+                        android:src="@drawable/open_lock" />
 
                     <EditText
                         android:layout_width="250dp"
                         android:layout_height="40dp"
                         android:background="@drawable/input_layout1"
-                        android:hint="암호문"
+                        android:hint="복호문"
                         android:paddingLeft="10dp"
                         android:textSize="15dp" />
                 </LinearLayout>
@@ -671,7 +680,7 @@
                         android:layout_height="45dp"
                         android:layout_gravity="right"
                         android:textSize="12dp"
-                        android:text="해당 암호문 복호화하기" />
+                        android:text="해당 복호문 암호화하기" />
 
                 </LinearLayout>
             </LinearLayout>
