@@ -44,10 +44,12 @@ public class SingleEncryptionSelectActivity extends AppCompatActivity {
                     case R.id.button_short:
                         Intent intent1 = new Intent(SingleEncryptionSelectActivity.this, SingleEncryptionShortActivity.class);
                         startActivity(intent1);
+                        finish();
                         break;
                     case R.id.button_long:
                         Intent intent2 = new Intent(SingleEncryptionSelectActivity.this, SingleEncryptionLongActivity.class);
                         startActivity(intent2);
+                        finish();
                         break;
                     case R.id.button_back:
                         finish();

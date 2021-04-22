@@ -43,10 +43,12 @@ public class SingleSelectActivity extends AppCompatActivity {
                     case R.id.button_encryption:
                         Intent intent1 = new Intent(SingleSelectActivity.this, SingleEncryptionSelectActivity.class);
                         startActivity(intent1);
+                        finish();
                         break;
                     case R.id.button_decode:
                         Intent intent2 = new Intent(SingleSelectActivity.this, SingleDecodeSelectActivity.class);
                         startActivity(intent2);
+                        finish();
                         break;
                     case R.id.button_back:
                         finish();

@@ -44,10 +44,12 @@ public class PlayfairDecodeSelectActivity extends AppCompatActivity {
                     case R.id.button_short:
                         Intent intent1 = new Intent(PlayfairDecodeSelectActivity.this, PlayfairDecodeShortActivity.class);
                         startActivity(intent1);
+                        finish();
                         break;
                     case R.id.button_long:
                         Intent intent2 = new Intent(PlayfairDecodeSelectActivity.this, PlayfairDecodeLongActivity.class);
                         startActivity(intent2);
+                        finish();
                         break;
                     case R.id.button_back:
                         finish();

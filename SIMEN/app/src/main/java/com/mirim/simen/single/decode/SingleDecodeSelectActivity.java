@@ -44,10 +44,12 @@ public class SingleDecodeSelectActivity extends AppCompatActivity {
                     case R.id.button_short:
                         Intent intent1 = new Intent(SingleDecodeSelectActivity.this, SingleDecodeShortActivity.class);
                         startActivity(intent1);
+                        finish();
                         break;
                     case R.id.button_long:
                         Intent intent2 = new Intent(SingleDecodeSelectActivity.this, SingleDecodeLongActivity.class);
                         startActivity(intent2);
+                        finish();
                         break;
                     case R.id.button_back:
                         finish();

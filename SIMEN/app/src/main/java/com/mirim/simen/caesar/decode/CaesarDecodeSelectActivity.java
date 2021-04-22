@@ -46,10 +46,12 @@ public class CaesarDecodeSelectActivity extends AppCompatActivity {
                     case R.id.button_short:
                         Intent intent1 = new Intent(CaesarDecodeSelectActivity.this, CaesarDecodeShortActivity.class);
                         startActivity(intent1);
+                        finish();
                         break;
                     case R.id.button_long:
                         Intent intent2 = new Intent(CaesarDecodeSelectActivity.this, CaesarDecodeLongActivity.class);
                         startActivity(intent2);
+                        finish();
                         break;
                     case R.id.button_back:
                         finish();

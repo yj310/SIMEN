@@ -48,10 +48,12 @@ public class PlayfairSelectActivity extends AppCompatActivity {
                     case R.id.button_encryption:
                         Intent intent1 = new Intent(PlayfairSelectActivity.this, PlayfairEncryptionSelectActivity.class);
                         startActivity(intent1);
+                        finish();
                         break;
                     case R.id.button_decode:
                         Intent intent2 = new Intent(PlayfairSelectActivity.this, PlayfairDecodeSelectActivity.class);
                         startActivity(intent2);
+                        finish();
                         break;
                     case R.id.button_back:
                         finish();

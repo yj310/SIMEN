@@ -44,10 +44,12 @@ public class PlayfairEncryptionSelectActivity extends AppCompatActivity {
                     case R.id.button_short:
                         Intent intent1 = new Intent(PlayfairEncryptionSelectActivity.this, PlayfairEncryptionShortActivity.class);
                         startActivity(intent1);
+                        finish();
                         break;
                     case R.id.button_long:
                         Intent intent2 = new Intent(PlayfairEncryptionSelectActivity.this, PlayfairEncryptionLongActivity.class);
                         startActivity(intent2);
+                        finish();
                         break;
                     case R.id.button_back:
                         finish();

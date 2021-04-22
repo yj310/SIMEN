@@ -36,7 +36,6 @@ public class PlayfairEncryptionShortActivity extends AppCompatActivity {
     TextView textBefore;
     TextView textAfter;
     TextView textKey;
-    String blankCheck = "";
 
     char alphabetBoard[][] = new char[5][5];
 
@@ -233,10 +232,12 @@ public class PlayfairEncryptionShortActivity extends AppCompatActivity {
     }
 
     public void Playfair() {
+        // 쌍자판 초기화
         for(int i = 0; i < 40; i++) {
             fairBeforeTable[i].setText("");
             fairAfterTable[i].setText("");
         }
+
         if(textBefore.getText().toString().length() > 0) {
             if(textKey.getText().toString().length() > 0) {
 
@@ -244,35 +245,35 @@ public class PlayfairEncryptionShortActivity extends AppCompatActivity {
                 String str = textBefore.getText().toString().toLowerCase();
                 String key = textKey.getText().toString();
 
-                int realStrLength = 0;
                 String alphabet = "abcdefghijklmnopqrstuvwxyz";
-                for(int i = 0; i < str.length(); i++) {
-                    for(int j = 0; j < alphabet.length(); j++) {
+                boolean isEng;
+
+                // 입력 문자열 정리
+                for(int i = 0 ; i < str.length() ; i++) {
+                    // 영어 이외 문자 제외
+                    isEng = false;
+                    for(int j = 0; j < 26; j++) {
                         if(str.charAt(i) == alphabet.charAt(j)) {
-                            realStrLength++;
+                            isEng = true;
                         }
                     }
+                    if(!isEng) {
+                        str = str.substring(0, i) + str.substring(i + 1, str.length());
+                        i--;
+                        continue;
+                    }
+
+                    //z를 q로 바꿔줘서 처리함.
+                    if(str.charAt(i) == 'z') {
+                        str = str.substring(0, i) + 'q' + str.substring(i + 1, str.length());
+                    }
+
                 }
 
-                if(realStrLength <= 40) {
+                if(str.length() <= 40) {
 
                     //암호화에 쓰일 암호판 세팅
                     setBoard(key);
-
-                    // 입력 문자열 정리
-                    for(int i = 0 ; i < str.length() ; i++) {
-                        // 공백 제거
-                        if(str.charAt(i) == ' ') {
-                            str = str.substring(0, i) + str.substring(i + 1, str.length());
-                        }
-
-                        //z를 q로 바꿔줘서 처리함.
-                        if(str.charAt(i) == 'z') {
-                            str = str.substring(0, i) + 'q' + str.substring(i + 1, str.length());
-                        }
-                    }
-
-
 
                     // 암호화
                     encryption = strEncryption(key, str);
@@ -280,6 +281,7 @@ public class PlayfairEncryptionShortActivity extends AppCompatActivity {
                     textAfter.setText(encryption);
 
                     Toast.makeText(this, "암호화를 완료하였습니다.", Toast.LENGTH_SHORT).show();
+
                 } else {
                     Toast.makeText(this, "암호화할 수 있는 글자수를 초과하였습니다.", Toast.LENGTH_SHORT).show();
                 }

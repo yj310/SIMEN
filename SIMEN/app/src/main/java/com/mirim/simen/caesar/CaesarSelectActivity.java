@@ -46,10 +46,12 @@ public class CaesarSelectActivity extends AppCompatActivity {
                     case R.id.button_encryption:
                         Intent intent1 = new Intent(CaesarSelectActivity.this, CaesarEncryptionSelectActivity.class);
                         startActivity(intent1);
+                        finish();
                         break;
                     case R.id.button_decode:
                         Intent intent2 = new Intent(CaesarSelectActivity.this, CaesarDecodeSelectActivity.class);
                         startActivity(intent2);
+                        finish();
                         break;
                     case R.id.button_back:
                         finish();
