@@ -42,7 +42,7 @@
                 android:id="@+id/button_another_key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="복호키 입력으로 복호화하기"
+                android:text="암호키 입력으로 복호화하기"
                 android:layout_gravity="right"
                 android:layout_margin="10dp"
                 android:textColor="#d0d0d0"
