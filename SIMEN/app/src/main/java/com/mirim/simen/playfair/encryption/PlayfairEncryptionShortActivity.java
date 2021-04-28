@@ -232,6 +232,7 @@ public class PlayfairEncryptionShortActivity extends AppCompatActivity {
     }
 
     public void Playfair() {
+
         // 쌍자판 초기화
         for(int i = 0; i < 40; i++) {
             fairBeforeTable[i].setText("");
@@ -263,7 +264,7 @@ public class PlayfairEncryptionShortActivity extends AppCompatActivity {
                         continue;
                     }
 
-                    //z를 q로 바꿔줘서 처리함.
+                    // z를 q로 바꿔줘서 처리함.
                     if(str.charAt(i) == 'z') {
                         str = str.substring(0, i) + 'q' + str.substring(i + 1, str.length());
                     }
@@ -272,7 +273,7 @@ public class PlayfairEncryptionShortActivity extends AppCompatActivity {
 
                 if(str.length() <= 40) {
 
-                    //암호화에 쓰일 암호판 세팅
+                    // 암호화에 쓰일 암호판 세팅
                     setBoard(key);
 
                     // 암호화
@@ -295,6 +296,7 @@ public class PlayfairEncryptionShortActivity extends AppCompatActivity {
 
 
     public String strEncryption(String key, String str){
+
         ArrayList<char[]> playFair = new ArrayList<char[]>();
         ArrayList<char[]> encPlayFair = new ArrayList<char[]>();
         int x1 = 0 , x2 = 0 , y1 = 0, y2 = 0;
@@ -326,7 +328,7 @@ public class PlayfairEncryptionShortActivity extends AppCompatActivity {
         for(int i = 0 ; i < playFair.size() ; i++ ) {
 
             char[] tmpArr = new char[2];
-            //쌍자암호의 각각 위치체크
+            // 쌍자암호의 각각 위치체크
             for( int j = 0 ; j < alphabetBoard.length ; j++ ) {
                 for( int k = 0 ; k < alphabetBoard[j].length ; k++ ) {
                     if(alphabetBoard[j][k] == playFair.get(i)[0]) {
@@ -340,16 +342,16 @@ public class PlayfairEncryptionShortActivity extends AppCompatActivity {
                 }
             }
 
-            //행이 같은경우
+            // 행이 같은경우
             if(x1==x2) {
                 tmpArr[0] = alphabetBoard[x1][(y1+1)%5];
                 tmpArr[1] = alphabetBoard[x2][(y2+1)%5];
             } else if(y1==y2) {
-                //열이 같은 경우
+                // 열이 같은 경우
                 tmpArr[0] = alphabetBoard[(x1+1)%5][y1];
                 tmpArr[1] = alphabetBoard[(x2+1)%5][y2];
             } else {
-                //행, 열 모두 다른경우
+                // 행, 열 모두 다른경우
                 tmpArr[0] = alphabetBoard[x2][y1];
                 tmpArr[1] = alphabetBoard[x1][y2];
             }
@@ -387,7 +389,7 @@ public class PlayfairEncryptionShortActivity extends AppCompatActivity {
             duplicationFlag = false;
         }
 
-        //배열에 대입
+        // 배열에 대입
         for(int i = 0 ; i < alphabetBoard.length ; i++) {
             for( int j = 0; j <alphabetBoard[i].length ; j++ )
             {
@@ -395,7 +397,7 @@ public class PlayfairEncryptionShortActivity extends AppCompatActivity {
             }
         }
 
-        //배열 출력
+        // 배열 출력
         for( int i = 0 ; i < alphabetBoard.length ; i++ ) {
             for( int j = 0; j <alphabetBoard[i].length ; j++ ) {
                 encryTable[i][j].setText(String.valueOf(alphabetBoard[i][j]));

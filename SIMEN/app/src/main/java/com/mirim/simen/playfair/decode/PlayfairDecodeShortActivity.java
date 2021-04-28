@@ -263,9 +263,9 @@ public class PlayfairDecodeShortActivity extends AppCompatActivity {
     }
 
     public String strDecryption(String key, String str) {
-        ArrayList<char[]> playFair = new ArrayList<char[]>(); // 바꾸기 전 쌍자암호를 저장할 곳
-        ArrayList<char[]> decPlayFair = new ArrayList<char[]>(); // 바꾼 후의 쌍자암호 저장할 곳
-        int x1 = 0 , x2 = 0 , y1 = 0, y2 = 0; // 쌍자 암호 두 글자의 각각의 행,열 값
+        ArrayList<char[]> playFair = new ArrayList<char[]>();       // 바꾸기 전 쌍자암호를 저장할 곳
+        ArrayList<char[]> decPlayFair = new ArrayList<char[]>();    // 바꾼 후의 쌍자암호 저장할 곳
+        int x1 = 0 , x2 = 0 , y1 = 0, y2 = 0;                       // 쌍자 암호 두 글자의 각각의 행,열 값
         String decStr ="";
 
         for( int i = 0 ; i < str.length() ; i+=2 ) {
@@ -296,15 +296,15 @@ public class PlayfairDecodeShortActivity extends AppCompatActivity {
             }
 
             if(x1 == x2)  {
-                //행이 같은 경우 각각 바로 아래열 대입
+                // 행이 같은 경우 각각 바로 아래열 대입
                 tmpArr[0] = alphabetBoard[x1][(y1 + 4) % 5];
                 tmpArr[1] = alphabetBoard[x2][(y2 + 4) % 5];
             } else if(y1==y2) {
-                //열이 같은 경우 각각 바로 옆 열 대입
+                // 열이 같은 경우 각각 바로 옆 열 대입
                 tmpArr[0] = alphabetBoard[(x1+4)%5][y1];
                 tmpArr[1] = alphabetBoard[(x2+4)%5][y2];
             } else  {
-                //행, 열 다른경우 각자 대각선에 있는 곳.
+                // 행, 열 다른경우 각자 대각선에 있는 곳.
                 tmpArr[0] = alphabetBoard[x2][y1];
                 tmpArr[1] = alphabetBoard[x1][y2];
             }
@@ -318,7 +318,7 @@ public class PlayfairDecodeShortActivity extends AppCompatActivity {
             fairAfterTable[i].setText(decPlayFair.get(i)[0] +""+ decPlayFair.get(i)[1]);
         }
 
-        //중복 문자열 돌려놓음
+        // 중복 문자열 돌려놓음
         for(int i = 0 ; i < decPlayFair.size() ; i++) {
             if(i != decPlayFair.size() - 1 && decPlayFair.get(i)[1] == 'x'
                     && decPlayFair.get(i)[0] == decPlayFair.get(i + 1)[0]) {
